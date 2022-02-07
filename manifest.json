@@ -4,7 +4,7 @@
 	"version": "1.0",
 	"manifest_version":3,
 	  "permissions": ["storage", "activeTab", "tabs", "scripting"],
-	  "host_permissions": ["https://ja.dict.naver.com/", "https://www.ldoceonline.com/", "https://dictionary.goo.ne.jp/", "https://www.google.com/"], 
+	  "host_permissions": ["https://dictionary.goo.ne.jp/", "https://www.google.com/search?q="], 
 	  "action": {
 		"default_icon": {
 			"16": "/images/get_started16.png",
