@@ -36,27 +36,27 @@ chrome.storage.sync.get(function (data) {
 
           console.log(entry_final[0]); // entry
 
-          // chrome.storage.sync.set({ // saving in the chrome strorage as key/value.
-          //   entry_jp_goo: entry_final[0]
-          // })
+          chrome.storage.sync.set({ // saving in the chrome strorage as key/value.
+            entry_jp_goo: entry_final[0]
+          })
 
-          // const explanation = doc.querySelectorAll('p.text');
-          // for (let i = 0; i < 3; i++) {
-          //   const line = explanation[i].textContent.trim();
-          //   const definition = line.split('「');
-          //   const definition_final = definition[0];
-          //   console.log(definition_final);
+          const explanation = doc.querySelectorAll('p.text');
+          for (let i = 0; i < 3; i++) {
+            const line = explanation[i].textContent.trim();
+            const definition = line.split('「');
+            const definition_final = definition[0];
+            console.log(definition_final);
 
-          //   if (definition[1] !== undefined) {
-          //     const example_01 = definition[1].replace('」', '。');
-          //     console.log(example_01);
-          //   }
+            if (definition[1] !== undefined) {
+              const example_01 = definition[1].replace('」', '。');
+              console.log(example_01);
+            }
 
-          //   if (definition[2] !== undefined) {
-          //     const example_02 = definition[2].replace('」', '。');
-          //     console.log(example_02);
-          //   }
-          // }
+            if (definition[2] !== undefined) {
+              const example_02 = definition[2].replace('」', '。');
+              console.log(example_02);
+            }
+          }
 
         })
         .catch(function (err) {
