@@ -19,16 +19,6 @@ function showDic() {
   document.body.appendChild(iframe);
 }
 
-// removing iframe
-document.addEventListener('click', removeDic);
-
-function removeDic() { // 'document.body.appendChild(iframe)' causes errors to occur.
-  let iframes = document.querySelectorAll('iframe');
-  for (let i = 0; i < iframes.length; i++) {
-    iframes[i].parentNode.removeChild(iframes[i]);
-  }
-}
-
 // processing texts
 document.addEventListener('dblclick', GetSelectedText);
 
@@ -57,9 +47,20 @@ function GetSelectedText() {
 
 
     chrome.storage.sync.set({ // saving in the chrome strorage as key/value.
-      site: url_ja_goo_search
+      site: url_ja_goo_search,
+      test: 'test value'
     })
 
   }
 }
 
+// removing iframe
+document.addEventListener('click', removeDic);
+
+function removeDic() { // 'document.body.appendChild(iframe)' causes errors to occur.
+  let iframes = document.querySelectorAll('iframe');
+  for (let i = 0; i < iframes.length; i++) {
+    iframes[i].parentNode.removeChild(iframes[i]);
+  }
+  
+}
